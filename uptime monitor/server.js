@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 const dbPool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'Tameralb567',
+    password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'uptime',
     waitForConnections: true,
     connectionLimit: 10,
@@ -573,5 +573,6 @@ const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
     console.log(`Uptime Monitor sunucusu ${PORT} portunda çalışıyor`);
 });
+
 
 module.exports = app;
